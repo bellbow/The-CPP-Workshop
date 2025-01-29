@@ -1,8 +1,16 @@
 //Hello world example.
 #include <iostream>
 
+#define HELLO "Hello World!"
 int main() 
 {
-    std::cout << "Hello World!";
-    return 0;
+    #ifdef HELLO 
+    std::cout << HELLO;
+    #endif
+
+    #undef HELLO
+    
+    #ifdef HELLO
+    std::cout << HELLO;
+    #endif
 }

@@ -1,0 +1,41 @@
+#include <iostream>
+
+void Modify(int a) {
+    //passing by value (making a copy)
+    a = a - 1;
+}
+
+void Modify2(int& a) {
+    //passing by reference (no copy)
+    a = a - 1;
+}
+
+//function overloading to allow for different types
+int Multiply(int a, int b) {
+    std::cout << "This is the int overload\n";
+    return a*b;
+}
+
+float Multiply(float a, float b) {
+    std::cout << "This is the float overload\n";
+    return a*b;
+}
+
+double Multiply(double a, double b) {
+    std::cout << "This is the double overload\n";
+    return a*b;
+}
+
+int main() {
+    int a = 10;
+    Modify(a);
+    std::cout << a << std::endl;
+
+    Modify2(a);
+    std::cout << a << std::endl;
+    //see the difference in outputs
+
+    Multiply(3,4);
+    Multiply(4.f,6.f);
+    Multiply(3.5,6.2);
+}

@@ -1,40 +1,37 @@
-// Activity 1.
 #include <iostream>
-#include <string>
 
-#define GROUP_1_THRESHOLD 12
-#define GROUP_2_THRESHOLD 28
-#define GROUP_1_NAME "Group A"
-#define GROUP_2_NAME "Group B"
-#define GROUP_3_NAME "Group C"
+//Users will be placed into groups based on their age, and we'll use macros to define these age brackets. 
+//We'll print the user's information back to them, along with their assigned group, using functions to encapsulate any repeated functionality
+#define YOUTH 12
+#define ADULT 18
+#define SENIOR 65
 
-std::string GetGroup(int age);
+void ageBracket(int age) {
+    if (age < YOUTH) {
+        std::cout << "You are in the CHILD group.";
+    }
 
-int main()
-{
-    std::string name = "";
-    int age = 0;
-    std::string group = "";
-    std::cout << "Please enter your name: ";
-    getline(std::cin, name);
-    std::cout << "And please enter your age: ";
-    std::cin >> age;
-    group = GetGroup(age);
-    std::cout << "Welcome "<< name << ". You are in " << group << ".\n";
+    else if (age < ADULT) {
+        std::cout << "You are in the YOUTH group.";
+    }
+
+    else if (age < SENIOR) {
+        std::cout << "You are in the ADULT group.";
+    }
+
+    else {
+        std::cout << "You are in the SENIOR group.";
+    }
+    
 }
+int main() {
+    std::string name;
+    int age;
+    std::cout << "What is your first name? ";
+    std::cin >> name;
+    std::cout << "What is your age? ";
+    std::cin >> age;
 
-std::string GetGroup(int age)
-{
-    if (age <= GROUP_1_THRESHOLD)
-    {
-        return GROUP_1_NAME;
-    }
-    else if (age <= GROUP_2_THRESHOLD)
-    {
-        return GROUP_2_NAME;
-    }
-    else
-    {
-        return GROUP_3_NAME;
-    }
+    std::cout << "Welcome " << name << std::endl;
+    ageBracket(age);
 }

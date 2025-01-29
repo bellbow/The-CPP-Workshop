@@ -2,15 +2,22 @@
 #include <iostream>
 #include <string>
 
-#define GRADE_C_THRESHOLD 25
-#define GRADE_B_THRESHOLD 50
-#define GRADE_A_THRESHOLD 75
+#define GRADE_C_THRESHOLD 70
+#define GRADE_B_THRESHOLD 80
+#define GRADE_A_THRESHOLD 90
 
 int main() 
 {
+    std::string number;
     int value = 0;
-    std::cout << "Please enter test score (0 - 100): ";
-    std::cin >> value;
+    // initialize value as an integer
+
+    std::cout << "Please enter test score (0 - 100): \n";
+    getline(std::cin,number);
+    value = std::stoi(number);
+    std::cout << "You grade is " << number <<std::endl;
+    //cin -> character in
+    //set user input to value
     if (value < GRADE_C_THRESHOLD)
     {
         std::cout << "Fail";
