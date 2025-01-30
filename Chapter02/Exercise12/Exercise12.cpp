@@ -1,31 +1,31 @@
 #include <iostream>
 #include <string>
 
-int main()
-{
-    int multiple = 0;
-    int count = 0;
-    int numbersPrinted = 0;
-    std::string input = "";
-    
-    std::cout << "Enter the value whose multiples will be printed: ";
+
+int main() {
+    std::string input;
+    std::string printed = "";
+    int printCount = 0;
+    int value;
+    int count;
+
+    std::cout << "Choose the value whose multiples will be printed: ";
     getline(std::cin, input);
-    multiple = std::stoi(input);
-    
-    std::cout << "Enter maximum amount of numbers to print: ";
+    value = std::stoi(input);
+
+    std::cout<< "Maximum number of multiples to print: ";
     getline(std::cin, input);
     count = std::stoi(input);
-    for (int i = 1; i <= 100; ++i)
-    {
-        if (numbersPrinted == count)
-        {
+
+    for (int i=1; i<=100; ++i) {
+        if (printCount == count) {
             break;
         }
-        if (i % multiple != 0)
-        {
+        if (i % value != 0) {
             continue;
         }
-        std::cout << i << "\n";
-        ++numbersPrinted;
+        std::cout << i << std::endl;
+        ++printCount;
     }
+
 }
