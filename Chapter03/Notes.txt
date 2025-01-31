@@ -1,0 +1,18 @@
+data type modifiers
+    signed - can be positive or negative
+    unsigned - only positive
+    long - at least the size of an int (usually 4 bytes)
+    long long - bigger than long (usually 8 bytes)
+    short - smaller than long
+
+data types
+    bool - boolean
+    int - integer
+    char - single character usually ASCII
+    float - single precision floating points
+    double - double precision floating points
+    void - empty, you can't create void objects but it can be used by pointers
+    wchar_t - wide character UTF-16, char_16t + char32_t are fixed size types
+
+containers
+    arrays - stores multiple of a single selected data type
